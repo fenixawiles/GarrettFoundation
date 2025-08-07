@@ -30,6 +30,9 @@ html {
   font-size: 17px;
   /* Support for dynamic viewport height */
   --vh: 1vh;
+  /* Improve scrolling performance on mobile */
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 /* Removed performance optimizations that may interfere with scrolling */
@@ -49,6 +52,8 @@ body {
   /* Ensure scrolling is never blocked */
   overflow-y: auto;
   position: static;
+  /* Critical for mobile touch scrolling */
+  touch-action: manipulation;
 }
 
 /* Typography */
@@ -195,6 +200,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 2rem;
   z-index: 10000;
+  /* Prevent scrolling issues when menu is open */
+  touch-action: none;
+  overscroll-behavior: contain;
 }
 
 .mobile-link {
