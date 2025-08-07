@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Garrett Foundation</title>
+    <meta name="description" content="Get in touch with Peggy Garrett for healthcare services consultation.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span>Garrett Foundation</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="recruiting.html" class="nav-link">Recruiting</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="services.html" class="mobile-link">Services</a>
+        <a href="recruiting.html" class="mobile-link">Recruiting</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Get In <span class="text-gradient">Touch</span></h1>
+                <p class="hero-subtitle">Ready to discuss your healthcare needs? I'm here to provide personalized guidance and support for your unique situation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: start;">
+                
+                <!-- Contact Information -->
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Let's Connect</h2>
+                    <p style="font-size: 1.125rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+                        Whether you need assistance with assisted living placement, healthcare recruiting, or diagnostic testing services, I'm here to help. Reach out to schedule a free consultation.
+                    </p>
+
+                    <div style="space-y: 2rem;">
+                        <!-- Email -->
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 0.25rem;">Email</h3>
+                                <a href="mailto:peggy@garrettfoundation.com" style="color: var(--primary); font-size: 1.125rem; text-decoration: none; font-weight: 500;">peggy@garrettfoundation.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Response Time -->
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 0.25rem;">Response Time</h3>
+                                <p style="color: var(--text-secondary); font-size: 1.125rem;">Typically within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: 0.25rem;">Availability</h3>
+                                <p style="color: var(--text-secondary); font-size: 1.125rem;">Monday - Friday, 9 AM - 6 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div style="background: white; border-radius: var(--radius-large); padding: var(--spacing-lg); box-shadow: var(--shadow-light); border: 1px solid var(--border);">
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--text-primary); text-align: center;">Send a Message</h3>
+                    
+                    <form id="contactForm" style="space-y: 1.5rem;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Full Name</label>
+                            <input type="text" id="name" name="name" required class="form-input" style="width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 1rem; background: var(--bg-primary); transition: border-color 0.3s ease;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Email Address</label>
+                            <input type="email" id="email" name="email" required class="form-input" style="width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 1rem; background: var(--bg-primary); transition: border-color 0.3s ease;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label for="service" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Service Interest</label>
+                            <select id="service" name="service" class="form-input" style="width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 1rem; background: var(--bg-primary); transition: border-color 0.3s ease;">
+                                <option value="">Select a service</option>
+                                <option value="assisted-living">Assisted Living Placement</option>
+                                <option value="testing">Alzheimer's & Drug Testing</option>
+                                <option value="recruiting">Healthcare Recruiting</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="form-input" placeholder="Tell me about your specific needs and how I can help..." style="width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 1rem; background: var(--bg-primary); transition: border-color 0.3s ease; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; font-weight: 500;">
+                            Send Message
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LinkedIn Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Connect on LinkedIn</h2>
+                <p class="section-subtitle">Stay updated on healthcare industry insights and professional updates</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="background: white; border-radius: var(--radius-large); padding: var(--spacing-lg); box-shadow: var(--shadow-light); border: 1px solid var(--border); text-align: center;">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 style="font-size: 1.75rem; color: var(--text-primary); margin-bottom: 1rem;">Peggy Garrett</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.125rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                        Healthcare Services Professional | Assisted Living Placement | Healthcare Recruiting | Senior Care Consultant
+                    </p>
+                    
+                    <a href="https://www.linkedin.com/in/peggy-garrett-504b45/" target="_blank" class="btn" style="background: #0077b5; color: white; border: none; font-weight: 500; text-decoration: none;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        Connect on LinkedIn
+                    </a>
+                    
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 1rem;">
+                        Follow for industry insights and professional updates
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span>Garrett Foundation</span>
+                    </div>
+                    <p class="footer-description">Professional healthcare services for assisted living, diagnostic testing, and recruiting.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="recruiting.html">Recruiting</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:peggy@garrettfoundation.com">peggy@garrettfoundation.com</a>
+                    <div>garrettfoundation.org</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2024 Garrett Foundation. Dedicated to improving healthcare outcomes.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const subject = `Healthcare Services Inquiry - ${service || 'General'}`;
+            const body = `Name: ${name}\nEmail: ${email}\nService Interest: ${service || 'General Consultation'}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:peggy@garrettfoundation.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your message! Your email client should open shortly. If it doesn\'t, please email peggy@garrettfoundation.com directly.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Form input focus effects
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--primary)';
+                this.style.outline = 'none';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.borderColor = 'var(--border)';
+            });
+        });
+    </script>
+</body>
+</html>

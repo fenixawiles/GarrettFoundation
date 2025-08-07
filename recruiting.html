@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Recruiting - Garrett Foundation</title>
+    <meta name="description" content="Professional healthcare recruiting services specializing in senior housing and healthcare facilities.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span>Garrett Foundation</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="recruiting.html" class="nav-link active">Recruiting</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="services.html" class="mobile-link">Services</a>
+        <a href="recruiting.html" class="mobile-link">Recruiting</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Healthcare <span class="text-gradient">Recruiting</span></h1>
+                <p class="hero-subtitle">Connecting healthcare facilities with exceptional professionals who are passionate about senior care and committed to providing the highest quality of service.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Partner With Us</a>
+                    <a href="#positions" class="btn btn-secondary">View Positions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specializations -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Specializations</h2>
+                <p class="section-subtitle">Focused expertise in senior housing and healthcare facility staffing</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; margin-bottom: 4rem;">
+                <div>
+                    <h3 style="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem;">Senior Housing Focus</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.6; margin-bottom: 2rem;">
+                        We specialize exclusively in healthcare recruitment for senior living facilities, assisted living communities, and long-term care environments. This focused approach allows us to understand the unique requirements and challenges of senior care staffing.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: center; padding: 0.5rem 0; color: var(--text-secondary);">
+                            <svg width="20" height="20" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Deep understanding of senior care environments
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 0.5rem 0; color: var(--text-secondary);">
+                            <svg width="20" height="20" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Extensive network of qualified healthcare professionals
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 0.5rem 0; color: var(--text-secondary);">
+                            <svg width="20" height="20" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Comprehensive background and credential verification
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 0.5rem 0; color: var(--text-secondary);">
+                            <svg width="20" height="20" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"></polyline>
+                            </svg>
+                            Cultural fit assessment for senior care teams
+                        </li>
+                    </ul>
+                </div>
+                <div style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: var(--radius-large); padding: var(--spacing-lg); color: white; text-align: center;">
+                    <h4 style="font-size: 1.5rem; margin-bottom: 2rem; color: white;">Our Success Rate</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">95%</div>
+                            <div style="font-size: 1rem; opacity: 0.9;">Placement Success</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">30</div>
+                            <div style="font-size: 1rem; opacity: 0.9;">Day Average Fill Time</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">85%</div>
+                            <div style="font-size: 1rem; opacity: 0.9;">1-Year Retention</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">50+</div>
+                            <div style="font-size: 1rem; opacity: 0.9;">Partner Facilities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Position Types -->
+    <section class="section" style="background: var(--bg-secondary);" id="positions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Position Specialties</h2>
+                <p class="section-subtitle">We recruit for all levels of healthcare professionals in senior housing</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Nursing Positions -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <h3>Nursing Staff</h3>
+                    <p>Registered Nurses (RN), Licensed Practical Nurses (LPN), and Certified Nursing Assistants (CNA) with senior care experience.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="padding: 0.25rem 0;">• Charge Nurses</li>
+                        <li style="padding: 0.25rem 0;">• Med Techs</li>
+                        <li style="padding: 0.25rem 0;">• Floor Nurses</li>
+                        <li style="padding: 0.25rem 0;">• Night Shift Staff</li>
+                    </ul>
+                </div>
+
+                <!-- Care Coordinators -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Care Coordination</h3>
+                    <p>Care coordinators, social workers, and patient advocates who ensure comprehensive resident care and family communication.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="padding: 0.25rem 0;">• Social Workers</li>
+                        <li style="padding: 0.25rem 0;">• Care Plan Coordinators</li>
+                        <li style="padding: 0.25rem 0;">• Patient Advocates</li>
+                        <li style="padding: 0.25rem 0;">• Family Liaisons</li>
+                    </ul>
+                </div>
+
+                <!-- Management -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <path d="M20 8v6M23 11l-3 3-3-3"></path>
+                        </svg>
+                    </div>
+                    <h3>Management & Leadership</h3>
+                    <p>Directors of nursing, administrators, and department heads who provide strategic leadership and operational excellence.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="padding: 0.25rem 0;">• Directors of Nursing</li>
+                        <li style="padding: 0.25rem 0;">• Facility Administrators</li>
+                        <li style="padding: 0.25rem 0;">• Department Supervisors</li>
+                        <li style="padding: 0.25rem 0;">• Quality Assurance</li>
+                    </ul>
+                </div>
+
+                <!-- Support Staff -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Administrative & Support</h3>
+                    <p>Essential support staff including administrative personnel, dietary staff, and maintenance professionals.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="padding: 0.25rem 0;">• Administrative Assistants</li>
+                        <li style="padding: 0.25rem 0;">• Dietary Staff</li>
+                        <li style="padding: 0.25rem 0;">• Activities Coordinators</li>
+                        <li style="padding: 0.25rem 0;">• Maintenance Personnel</li>
+                    </ul>
+                </div>
+
+                <!-- Therapy Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                        </svg>
+                    </div>
+                    <h3>Therapy & Rehabilitation</h3>
+                    <p>Physical therapists, occupational therapists, and speech therapists specializing in geriatric care and rehabilitation.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="padding: 0.25rem 0;">• Physical Therapists</li>
+                        <li style="padding: 0.25rem 0;">• Occupational Therapists</li>
+                        <li style="padding: 0.25rem 0;">• Speech Therapists</li>
+                        <li style="padding: 0.25rem 0;">• Therapy Assistants</li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Care -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"></path>
+                        </svg>
+                    </div>
+                    <h3>Specialized Care</h3>
+                    <p>Professionals with specialized training in dementia care, hospice care, and other specialized senior health services.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <li style="padding: 0.25rem 0;">• Memory Care Specialists</li>
+                        <li style="padding: 0.25rem 0;">• Hospice Care Providers</li>
+                        <li style="padding: 0.25rem 0;">• Wound Care Specialists</li>
+                        <li style="padding: 0.25rem 0;">• Geriatric Specialists</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Facilities -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">For Healthcare Facilities</h2>
+                <p class="section-subtitle">Streamlined recruitment solutions for senior housing providers</p>
+            </div>
+            
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
+                    <!-- Benefits -->
+                    <div style="background: white; border-radius: var(--radius-large); padding: var(--spacing-lg); box-shadow: var(--shadow-light); border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.75rem; color: var(--primary); margin-bottom: 1.5rem;">Why Partner With Us</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="display: flex; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                                <svg width="24" height="24" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Reduced Time to Fill</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Average 30-day placement time with our extensive candidate network.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                                <svg width="24" height="24" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Quality Candidates</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Pre-screened professionals with verified credentials and senior care experience.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                                <svg width="24" height="24" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Cost-Effective</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Competitive rates with transparent pricing and no hidden fees.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; padding: 1rem 0;">
+                                <svg width="24" height="24" style="margin-right: 1rem; color: var(--primary); flex-shrink: 0; margin-top: 0.25rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Ongoing Support</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Post-placement support to ensure successful integration and retention.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Process -->
+                    <div style="background: white; border-radius: var(--radius-large); padding: var(--spacing-lg); box-shadow: var(--shadow-light); border: 1px solid var(--border);">
+                        <h3 style="font-size: 1.75rem; color: var(--primary); margin-bottom: 1.5rem;">Our Process</h3>
+                        <div style="display: grid; gap: 1.5rem;">
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.875rem;">1</div>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Needs Assessment</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Comprehensive evaluation of your staffing requirements and facility culture.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.875rem;">2</div>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Candidate Sourcing</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Active recruitment from our network and targeted outreach to qualified professionals.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.875rem;">3</div>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Screening & Verification</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Thorough background checks, credential verification, and skills assessment.</p>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: start; gap: 1rem;">
+                                <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.875rem;">4</div>
+                                <div>
+                                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">Placement & Follow-up</h4>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Candidate presentation, interview coordination, and post-placement support.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Professionals -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">For Healthcare Professionals</h2>
+                <p class="section-subtitle">Advance your career in senior housing and healthcare</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.6; margin-bottom: 3rem;">
+                    Join our network of healthcare professionals who are making a difference in senior care. We connect qualified candidates with rewarding opportunities in top-tier senior housing facilities.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="background: white; border-radius: var(--radius-large); padding: 2rem; box-shadow: var(--shadow-light); border: 1px solid var(--border);">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Career Growth</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Opportunities for advancement in leading senior care facilities.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: var(--radius-large); padding: 2rem; box-shadow: var(--shadow-light); border: 1px solid var(--border);">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Competitive Benefits</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Attractive compensation packages and comprehensive benefits.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: var(--radius-large); padding: 2rem; box-shadow: var(--shadow-light); border: 1px solid var(--border);">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Meaningful Work</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Make a real difference in the lives of seniors and their families.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Submit Your Resume</a>
+                    <a href="mailto:peggy@garrettfoundation.com" class="btn btn-ghost">Discuss Opportunities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Connect?</h2>
+                <p class="cta-subtitle">Whether you're a healthcare facility looking for talent or a professional seeking new opportunities, we're here to help make the perfect match.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+                    <a href="mailto:peggy@garrettfoundation.com" class="btn btn-ghost">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span>Garrett Foundation</span>
+                    </div>
+                    <p class="footer-description">Professional healthcare services for assisted living, diagnostic testing, and recruiting.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="recruiting.html">Recruiting</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:peggy@garrettfoundation.com">peggy@garrettfoundation.com</a>
+                    <div>garrettfoundation.org</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2024 Garrett Foundation. Dedicated to improving healthcare outcomes.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
