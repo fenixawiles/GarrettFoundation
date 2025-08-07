@@ -61,6 +61,25 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Menu button not found');
     }
     
+    // Add click handler to close button
+    const closeBtn = document.querySelector('.mobile-menu-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Close button clicked');
+            closeMobileMenu();
+        });
+        // Safari touch fix
+        closeBtn.addEventListener('touchend', function(e) {
+            console.log('Close button touched');
+            closeMobileMenu();
+        });
+        console.log('Close button handler attached');
+    } else {
+        console.log('Close button not found');
+    }
+    
     // Add click handlers to mobile links
     const mobileLinks = document.querySelectorAll('.mobile-link');
     console.log('Found mobile links:', mobileLinks.length);

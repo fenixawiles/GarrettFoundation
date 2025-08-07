@@ -1,0 +1,15 @@
+{
+  "name": "garrett-foundation-website",
+  "version": "1.0.0",
+  "description": "Garrett Foundation Healthcare Services Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=8080 --host=0.0.0.0 --no-browser --cors",
+    "dev": "npx live-server --port=8080 --host=0.0.0.0 --open=/index.html",
+    "mobile": "npx live-server --port=8080 --host=0.0.0.0 --no-browser --cors --verbose",
+    "serve": "npx http-server . -p 8080 -a 0.0.0.0 --cors -c-1"
+  },
+  "keywords": ["healthcare", "website", "static"],
+  "author": "Garrett Foundation",
+  "license": "MIT"
+}
