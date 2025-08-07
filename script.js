@@ -2,6 +2,7 @@
 
 // Global variables for menu state
 let mobileMenuOpen = false;
+let menuInteractionLocked = false;
 
 // Mobile menu functionality (works on all browsers)
 function toggleMobileMenu() {
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         // Safari touch fix
         closeBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
             console.log('Close button touched');
             closeMobileMenu();
         });
@@ -86,13 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     mobileLinks.forEach((link, index) => {
         link.addEventListener('click', function(e) {
-            console.log('Mobile link clicked:', index);
+            console.log('Mobile link clicked:', index, 'href:', link.href);
+            // Close menu but DON'T prevent default navigation
             closeMobileMenu();
-        });
-        // Safari touch fix
-        link.addEventListener('touchend', function(e) {
-            console.log('Mobile link touched:', index);
-            closeMobileMenu();
+            // Let the browser handle the navigation naturally
         });
     });
     

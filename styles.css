@@ -224,28 +224,38 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-menu-close {
   position: absolute;
   top: 2rem;
-  right: 2rem;
-  background: none;
-  border: none;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--text-primary);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   /* Safari-specific touch fixes */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  z-index: 10001;
 }
 
 .mobile-menu-close:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu-close svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.5;
 }
 
 .mobile-link {
