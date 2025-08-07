@@ -1,36 +1,62 @@
 // Mobile-optimized JavaScript with scroll-friendly menu handling
 
-// Mobile menu functionality with body scroll management
+// Mobile menu functionality with body scroll management (Safari-compatible)
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const body = document.body;
-    const isVisible = mobileMenu.style.display === 'flex';
+    const isVisible = mobileMenu.classList.contains('show');
     
     if (isVisible) {
-        mobileMenu.style.display = 'none';
+        mobileMenu.classList.remove('show');
         body.style.overflow = 'auto'; // Restore scrolling
+        body.style.position = 'static'; // Safari fix
     } else {
-        mobileMenu.style.display = 'flex';
+        mobileMenu.classList.add('show');
         body.style.overflow = 'hidden'; // Prevent background scrolling
+        body.style.position = 'fixed'; // Safari fix
+        body.style.width = '100%'; // Safari fix
     }
 }
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('mobileMenu').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
+// Close mobile menu when clicking on a link (Safari-compatible)
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const body = document.body;
+    
+    mobileMenu.classList.remove('show');
+    body.style.overflow = 'auto';
+    body.style.position = 'static';
+    body.style.width = 'auto';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers to mobile links
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+        // Safari-specific touch handling
+        link.addEventListener('touchstart', function() {});
     });
 });
 
-// Close mobile menu when clicking outside
+// Close mobile menu when clicking outside (Safari-compatible)
 document.addEventListener('click', (e) => {
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     
-    if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        mobileMenu.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
+    if (mobileMenu && mobileMenu.classList.contains('show') && 
+        !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+    }
+});
+
+// Safari-specific touch event for backdrop
+document.addEventListener('touchstart', (e) => {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (mobileMenu && mobileMenu.classList.contains('show') && 
+        !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
     }
 });
 
