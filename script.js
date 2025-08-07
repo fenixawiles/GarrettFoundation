@@ -1,22 +1,32 @@
-// Mobile menu functionality
+// Mobile menu functionality with enhanced mobile support
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const isVisible = mobileMenu.style.display === 'flex';
+    const body = document.body;
     
     if (isVisible) {
         mobileMenu.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        body.style.overflow = 'auto';
+        body.style.position = 'static';
+        body.style.width = 'auto';
     } else {
         mobileMenu.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
     }
 }
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
-        document.getElementById('mobileMenu').style.display = 'none';
-        document.body.style.overflow = 'auto';
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+        
+        mobileMenu.style.display = 'none';
+        body.style.overflow = 'auto';
+        body.style.position = 'static';
+        body.style.width = 'auto';
     });
 });
 
@@ -25,9 +35,13 @@ document.addEventListener('click', (e) => {
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     
-    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+    if (mobileMenu && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        const body = document.body;
+        
         mobileMenu.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        body.style.overflow = 'auto';
+        body.style.position = 'static';
+        body.style.width = 'auto';
     }
 });
 
@@ -123,17 +137,7 @@ function initSafariOptimizations() {
         setTimeout(updateViewportHeight, 100);
     });
     
-    // Prevent iOS Safari bounce scrolling
-    document.addEventListener('touchstart', function(e) {
-        if (e.touches.length === 1) {
-            const el = e.target;
-            // Allow scrolling on specific elements
-            const scrollableParent = el.closest('.scrollable, textarea, [contenteditable]');
-            if (!scrollableParent) {
-                e.preventDefault();
-            }
-        }
-    }, { passive: false });
+    // Note: Removed bounce scrolling prevention as it was blocking normal scrolling
     
     // Fix iOS Safari input focus issues
     const inputs = document.querySelectorAll('input, textarea, select');
@@ -147,65 +151,38 @@ function initSafariOptimizations() {
     });
 }
 
-// Enhanced mobile menu with better touch handling
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const isVisible = mobileMenu.style.display === 'flex';
-    const body = document.body;
-    
-    if (isVisible) {
-        mobileMenu.style.display = 'none';
-        body.style.overflow = 'auto';
-        body.style.position = 'static';
-    } else {
-        mobileMenu.style.display = 'flex';
-        body.style.overflow = 'hidden';
-        body.style.position = 'fixed';
-        body.style.width = '100%';
-    }
-}
 
-// Improved touch handling for mobile devices
+// Simplified touch handling for mobile devices
 function initTouchHandling() {
     let touchStartY = 0;
     let touchEndY = 0;
     
     document.addEventListener('touchstart', (e) => {
         touchStartY = e.changedTouches[0].screenY;
-    });
+    }, { passive: true });
     
     document.addEventListener('touchend', (e) => {
         touchEndY = e.changedTouches[0].screenY;
         handleGesture();
-    });
+    }, { passive: true });
     
     function handleGesture() {
         const swipeThreshold = 100;
         const diff = touchStartY - touchEndY;
         
-        // Close mobile menu on swipe up
-        if (Math.abs(diff) > swipeThreshold) {
+        // Close mobile menu on swipe up (only when menu is open)
+        if (Math.abs(diff) > swipeThreshold && diff > 0) {
             const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu && mobileMenu.style.display === 'flex' && diff > 0) {
+            if (mobileMenu && mobileMenu.style.display === 'flex') {
                 toggleMobileMenu();
             }
         }
     }
 }
 
-// Enhanced viewport optimization
+// Enhanced viewport optimization (without blocking scrolling)
 function optimizeViewport() {
-    // Prevent zoom on double tap for iOS Safari
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', (event) => {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
-        lastTouchEnd = now;
-    }, false);
-    
-    // Optimize scroll performance
+    // Optimize scroll performance only
     let ticking = false;
     const updateScrollEffects = () => {
         updateNavbar();
