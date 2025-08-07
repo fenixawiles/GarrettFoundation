@@ -109,8 +109,128 @@ function animateStats() {
     stats.forEach(stat => observer.observe(stat));
 }
 
+// Safari-specific optimizations
+function initSafariOptimizations() {
+    // Fix Safari viewport height issues
+    const updateViewportHeight = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    
+    updateViewportHeight();
+    window.addEventListener('resize', updateViewportHeight);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(updateViewportHeight, 100);
+    });
+    
+    // Prevent iOS Safari bounce scrolling
+    document.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1) {
+            const el = e.target;
+            // Allow scrolling on specific elements
+            const scrollableParent = el.closest('.scrollable, textarea, [contenteditable]');
+            if (!scrollableParent) {
+                e.preventDefault();
+            }
+        }
+    }, { passive: false });
+    
+    // Fix iOS Safari input focus issues
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            // Scroll to input after keyboard appears
+            setTimeout(() => {
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        });
+    });
+}
+
+// Enhanced mobile menu with better touch handling
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const isVisible = mobileMenu.style.display === 'flex';
+    const body = document.body;
+    
+    if (isVisible) {
+        mobileMenu.style.display = 'none';
+        body.style.overflow = 'auto';
+        body.style.position = 'static';
+    } else {
+        mobileMenu.style.display = 'flex';
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+    }
+}
+
+// Improved touch handling for mobile devices
+function initTouchHandling() {
+    let touchStartY = 0;
+    let touchEndY = 0;
+    
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.changedTouches[0].screenY;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].screenY;
+        handleGesture();
+    });
+    
+    function handleGesture() {
+        const swipeThreshold = 100;
+        const diff = touchStartY - touchEndY;
+        
+        // Close mobile menu on swipe up
+        if (Math.abs(diff) > swipeThreshold) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu && mobileMenu.style.display === 'flex' && diff > 0) {
+                toggleMobileMenu();
+            }
+        }
+    }
+}
+
+// Enhanced viewport optimization
+function optimizeViewport() {
+    // Prevent zoom on double tap for iOS Safari
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', (event) => {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+    
+    // Optimize scroll performance
+    let ticking = false;
+    const updateScrollEffects = () => {
+        updateNavbar();
+        ticking = false;
+    };
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
 // Initialize animations when DOM is loaded (simplified for performance)
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Safari-specific optimizations
+    initSafariOptimizations();
+    
+    // Initialize touch handling for mobile
+    initTouchHandling();
+    
+    // Optimize viewport
+    optimizeViewport();
+    
     // Only animate stats on homepage to reduce scroll lag
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
         animateStats();

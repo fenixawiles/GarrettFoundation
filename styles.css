@@ -28,6 +28,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 17px;
+  /* Support for dynamic viewport height */
+  --vh: 1vh;
 }
 
 /* Performance optimizations for smooth scrolling */
@@ -618,7 +620,65 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari viewport fixes */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  .navbar {
+    /* Prevent Safari from adding padding-top for safe area */
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  /* Fix iOS Safari input zoom */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+  
+  /* Fix iOS Safari button rendering */
+  .btn {
+    -webkit-appearance: none;
+    border-radius: 22px;
+  }
+}
+
+/* Additional mobile optimizations */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.form-input:focus {
+  border-color: var(--primary) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Enhanced touch targets */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+  
+  .nav-link {
+    padding: 12px 0;
+  }
+  
+  .mobile-link {
+    padding: 16px 0;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -639,10 +699,12 @@ h1, h2, h3, h4, h5, h6 {
   
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .footer-content {
@@ -666,6 +728,37 @@ h1, h2, h3, h4, h5, h6 {
   
   .btn {
     min-width: 200px;
+  }
+  
+  /* Mobile-specific grid improvements */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  /* Better mobile typography */
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1.1;
+  }
+  
+  .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+  
+  /* Mobile form improvements */
+  .form-input {
+    padding: 16px 20px;
+    border-radius: 12px;
+  }
+  
+  /* Better mobile spacing */
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .resume-content {
+    padding: 1.5rem;
   }
 }
 
