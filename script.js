@@ -123,7 +123,7 @@ function animateStats() {
     stats.forEach(stat => observer.observe(stat));
 }
 
-// Safari-specific optimizations
+// Minimal Safari viewport height fix only
 function initSafariOptimizations() {
     // Fix Safari viewport height issues
     const updateViewportHeight = () => {
@@ -136,77 +136,12 @@ function initSafariOptimizations() {
     window.addEventListener('orientationchange', () => {
         setTimeout(updateViewportHeight, 100);
     });
-    
-    // Note: Removed bounce scrolling prevention as it was blocking normal scrolling
-    
-    // Fix iOS Safari input focus issues
-    const inputs = document.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            // Scroll to input after keyboard appears
-            setTimeout(() => {
-                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 300);
-        });
-    });
 }
 
-
-// Simplified touch handling for mobile devices
-function initTouchHandling() {
-    let touchStartY = 0;
-    let touchEndY = 0;
-    
-    document.addEventListener('touchstart', (e) => {
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-    
-    document.addEventListener('touchend', (e) => {
-        touchEndY = e.changedTouches[0].screenY;
-        handleGesture();
-    }, { passive: true });
-    
-    function handleGesture() {
-        const swipeThreshold = 100;
-        const diff = touchStartY - touchEndY;
-        
-        // Close mobile menu on swipe up (only when menu is open)
-        if (Math.abs(diff) > swipeThreshold && diff > 0) {
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu && mobileMenu.style.display === 'flex') {
-                toggleMobileMenu();
-            }
-        }
-    }
-}
-
-// Enhanced viewport optimization (without blocking scrolling)
-function optimizeViewport() {
-    // Optimize scroll performance only
-    let ticking = false;
-    const updateScrollEffects = () => {
-        updateNavbar();
-        ticking = false;
-    };
-    
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(updateScrollEffects);
-            ticking = true;
-        }
-    }, { passive: true });
-}
-
-// Initialize animations when DOM is loaded (simplified for performance)
+// Initialize animations when DOM is loaded (minimal version)
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Safari-specific optimizations
     initSafariOptimizations();
-    
-    // Initialize touch handling for mobile
-    initTouchHandling();
-    
-    // Optimize viewport
-    optimizeViewport();
     
     // Only animate stats on homepage to reduce scroll lag
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {

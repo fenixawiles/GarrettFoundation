@@ -52,6 +52,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
+  /* Ensure scrolling is never blocked */
+  overflow-y: auto;
+  position: static;
 }
 
 /* Typography */
