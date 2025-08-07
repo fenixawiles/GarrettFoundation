@@ -1,63 +1,107 @@
-// Mobile-optimized JavaScript with scroll-friendly menu handling
+// Mobile-optimized JavaScript with cross-browser menu handling
 
-// Mobile menu functionality with body scroll management (Safari-compatible)
+// Global variables for menu state
+let mobileMenuOpen = false;
+
+// Mobile menu functionality (works on all browsers)
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const body = document.body;
-    const isVisible = mobileMenu.classList.contains('show');
     
-    if (isVisible) {
+    console.log('Toggle menu clicked, current state:', mobileMenuOpen);
+    
+    if (mobileMenuOpen) {
+        // Close menu
         mobileMenu.classList.remove('show');
-        body.style.overflow = 'auto'; // Restore scrolling
-        body.style.position = 'static'; // Safari fix
+        body.style.overflow = 'auto';
+        body.style.position = 'static';
+        body.style.width = 'auto';
+        mobileMenuOpen = false;
+        console.log('Menu closed');
     } else {
+        // Open menu
         mobileMenu.classList.add('show');
-        body.style.overflow = 'hidden'; // Prevent background scrolling
-        body.style.position = 'fixed'; // Safari fix
-        body.style.width = '100%'; // Safari fix
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+        mobileMenuOpen = true;
+        console.log('Menu opened');
     }
 }
 
-// Close mobile menu when clicking on a link (Safari-compatible)
+// Close mobile menu
 function closeMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const body = document.body;
+    
+    console.log('Closing menu');
     
     mobileMenu.classList.remove('show');
     body.style.overflow = 'auto';
     body.style.position = 'static';
     body.style.width = 'auto';
+    mobileMenuOpen = false;
 }
 
+// Initialize mobile menu functionality when DOM loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing menu');
+    
+    // Add click handler to hamburger button
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu button clicked');
+            toggleMobileMenu();
+        });
+        console.log('Menu button handler attached');
+    } else {
+        console.log('Menu button not found');
+    }
+    
     // Add click handlers to mobile links
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-        // Safari-specific touch handling
-        link.addEventListener('touchstart', function() {});
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    console.log('Found mobile links:', mobileLinks.length);
+    
+    mobileLinks.forEach((link, index) => {
+        link.addEventListener('click', function(e) {
+            console.log('Mobile link clicked:', index);
+            closeMobileMenu();
+        });
+        // Safari touch fix
+        link.addEventListener('touchend', function(e) {
+            console.log('Mobile link touched:', index);
+            closeMobileMenu();
+        });
     });
-});
-
-// Close mobile menu when clicking outside (Safari-compatible)
-document.addEventListener('click', (e) => {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     
-    if (mobileMenu && mobileMenu.classList.contains('show') && 
-        !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        closeMobileMenu();
-    }
-});
-
-// Safari-specific touch event for backdrop
-document.addEventListener('touchstart', (e) => {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        
+        if (mobileMenuOpen && mobileMenu && menuBtn) {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                console.log('Clicked outside menu, closing');
+                closeMobileMenu();
+            }
+        }
+    });
     
-    if (mobileMenu && mobileMenu.classList.contains('show') && 
-        !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        closeMobileMenu();
-    }
+    // Safari-specific touch handling for backdrop
+    document.addEventListener('touchend', function(e) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        
+        if (mobileMenuOpen && mobileMenu && menuBtn) {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                console.log('Touched outside menu, closing');
+                closeMobileMenu();
+            }
+        }
+    });
 });
 
 // Smooth scrolling for anchor links (mobile-optimized)
