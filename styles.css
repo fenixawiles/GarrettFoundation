@@ -714,6 +714,36 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-appearance: none;
     border-radius: 22px;
   }
+  
+  /* Safari-specific service detail fixes for mobile */
+  @media (max-width: 768px) {
+    .section div[style*="grid-template-columns: auto 1fr"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 0 !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .section div[style*="80px; height: 80px"] {
+      margin: 0 auto 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .section ul[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .section h3[style*="font-size: 2rem"] {
+      font-size: 1.75rem !important;
+      text-align: center !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
 }
 
 /* Additional mobile optimizations */
@@ -834,14 +864,35 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: unset !important;
   }
   
+  /* More specific targeting for Safari */
+  .section div[style*="display: grid; grid-template-columns: auto 1fr; gap: 2rem"] {
+    display: block !important;
+    grid-template-columns: unset !important;
+    gap: unset !important;
+  }
+  
   /* Service detail card icons on mobile */
   .section [style*="width: 80px; height: 80px; border-radius: 50%"] {
     margin: 0 auto 1.5rem !important;
     display: flex !important;
   }
   
+  /* More specific icon targeting for Safari */
+  .section div[style*="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient"] {
+    margin: 0 auto 1.5rem !important;
+    display: flex !important;
+    flex-shrink: 0 !important;
+  }
+  
   /* Service detail lists on mobile - make single column */
   .section [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.25rem !important;
+  }
+  
+  /* More specific list targeting for Safari */
+  .section ul[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+    display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 0.25rem !important;
   }
@@ -853,8 +904,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem !important;
   }
   
+  /* More specific heading targeting for Safari */
+  .section h3[style*="font-size: 2rem; color: var(--text-primary)"] {
+    font-size: 1.75rem !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+  }
+  
   .section [style*="font-size: 1.25rem"] {
     font-size: 1.125rem !important;
+  }
+  
+  /* More specific subtitle targeting for Safari */
+  .section h4[style*="color: var(--primary); font-size: 1.25rem"] {
+    font-size: 1.125rem !important;
+    text-align: center !important;
   }
 }
 
