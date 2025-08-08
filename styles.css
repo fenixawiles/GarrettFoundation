@@ -717,6 +717,7 @@ h1, h2, h3, h4, h5, h6 {
   
   /* Safari-specific service detail fixes for mobile */
   @media (max-width: 768px) {
+    /* Main grid layout fixes */
     .section div[style*="grid-template-columns: auto 1fr"] {
       display: block !important;
       grid-template-columns: none !important;
@@ -725,23 +726,90 @@ h1, h2, h3, h4, h5, h6 {
       transform: translateZ(0);
     }
     
+    .section div[style*="display: grid; grid-template-columns: auto 1fr"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 1rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Icon positioning fixes */
     .section div[style*="80px; height: 80px"] {
       margin: 0 auto 1.5rem !important;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
     
+    .section div[style*="width: 80px; height: 80px; border-radius: 50%"] {
+      margin: 0 auto 1.5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* List column fixes */
     .section ul[style*="grid-template-columns: 1fr 1fr"] {
       grid-template-columns: 1fr !important;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
     
+    .section ul[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 0.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Typography fixes */
     .section h3[style*="font-size: 2rem"] {
       font-size: 1.75rem !important;
       text-align: center !important;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
+    }
+    
+    /* Content text alignment */
+    .section p[style*="font-size: 1.125rem"] {
+      text-align: center !important;
+      margin-bottom: 1.5rem !important;
+    }
+    
+    /* Subtitle alignment */
+    .section h4[style*="font-size: 1.25rem"] {
+      text-align: center !important;
+      font-size: 1.125rem !important;
+    }
+    
+    /* Process section mobile fixes */
+    .section div[style*="display: flex; align-items: center; gap: 2rem"] {
+      flex-direction: column !important;
+      text-align: center !important;
+      gap: 1rem !important;
+      align-items: center !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .section div[style*="width: 60px; height: 60px; border-radius: 50%"] {
+      margin-bottom: 1rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Additional service card content fixes */
+    .section div[style*="padding: var(--spacing-lg)"] {
+      padding: 2rem !important;
+      text-align: center !important;
+    }
+    
+    .section div[style*="max-width: 1000px; margin: 0 auto"] {
+      padding: 0 1rem !important;
+      margin: 0 auto 2rem !important;
     }
   }
 }
