@@ -730,131 +730,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Safari-specific recruiting page fixes */
-@supports (-webkit-touch-callout: none) {
-  @media (max-width: 768px) {
-    /* CRITICAL: Main specializations grid - Line 77 */
-    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; margin-bottom: 4rem"] {
-      display: block !important;
-      grid-template-columns: none !important;
-      gap: 0 !important;
-      align-items: stretch !important;
-      margin-bottom: 2rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Force block layout for any 1fr 1fr grid in Safari */
-    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center"] {
-      display: block !important;
-      grid-template-columns: none !important;
-      gap: 0 !important;
-      align-items: stretch !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* CRITICAL: Stats grid inside gradient box - Line 112 */
-    .section div[style*="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)"] div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 1rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* More specific stats grid targeting */
-    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 1rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* CRITICAL: Facilities section - Line 265 */
-    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl)"] {
-      display: block !important;
-      grid-template-columns: none !important;
-      gap: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* CRITICAL: Professionals grid - Line 364 */
-    .section div[style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem"] {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Enhanced Safari typography fixes */
-    .section h3[style*="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem"] {
-      font-size: 1.75rem !important;
-      text-align: center !important;
-      margin-bottom: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    .section h4[style*="font-size: 1.5rem; margin-bottom: 2rem; color: white"] {
-      font-size: 1.375rem !important;
-      text-align: center !important;
-      margin-bottom: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Safari paragraph text fixes */
-    .section p[style*="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.6; margin-bottom: 2rem"] {
-      text-align: center !important;
-      margin-bottom: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Safari content centering */
-    .section div[style*="text-align: center"] h3 {
-      text-align: center !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Safari card padding fixes */
-    .section div[style*="background: white; border-radius: var(--radius-large); padding: var(--spacing-lg)"] {
-      padding: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    .section div[style*="background: white; border-radius: var(--radius-large); padding: 2rem"] {
-      padding: 1.5rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Safari list fixes for flex items */
-    .section li[style*="display: flex; align-items: center; padding: 0.5rem 0"] {
-      display: block !important;
-      padding: 0.75rem 0 !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-    
-    /* Safari flex container fixes for process steps */
-    .section div[style*="display: flex; align-items: start; gap: 1rem"] {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center !important;
-      gap: 1rem !important;
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-    }
-  }
-}
+/* Safari-specific recruiting page fixes - MOVED TO END TO OVERRIDE SERVICES FIXES */
 
 /* Enhanced Responsive Design */
 /* Safari-specific fixes */
@@ -1013,6 +889,122 @@ h1, h2, h3, h4, h5, h6 {
     .section p[style*="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.6; margin-bottom: 1.5rem"] {
       text-align: center !important;
       margin-bottom: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* RECRUITING PAGE SAFARI FIXES - OVERRIDE SERVICES FIXES ABOVE */
+    
+    /* CRITICAL: Main specializations grid - Line 77 */
+    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; margin-bottom: 4rem"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 0 !important;
+      align-items: stretch !important;
+      margin-bottom: 2rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Force block layout for any 1fr 1fr grid in Safari */
+    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 0 !important;
+      align-items: stretch !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* CRITICAL: Stats grid inside gradient box - Line 112 */
+    .section div[style*="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)"] div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* More specific stats grid targeting */
+    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* CRITICAL: Facilities section - Line 265 */
+    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl)"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* CRITICAL: Professionals grid - Line 364 */
+    .section div[style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem"] {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Enhanced Safari typography fixes for recruiting */
+    .section h3[style*="font-size: 2rem; color: var(--text-primary); margin-bottom: 1.5rem"] {
+      font-size: 1.75rem !important;
+      text-align: center !important;
+      margin-bottom: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .section h4[style*="font-size: 1.5rem; margin-bottom: 2rem; color: white"] {
+      font-size: 1.375rem !important;
+      text-align: center !important;
+      margin-bottom: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari paragraph text fixes for recruiting */
+    .section p[style*="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.6; margin-bottom: 2rem"] {
+      text-align: center !important;
+      margin-bottom: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari card padding fixes for recruiting */
+    .section div[style*="background: white; border-radius: var(--radius-large); padding: var(--spacing-lg)"] {
+      padding: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    .section div[style*="background: white; border-radius: var(--radius-large); padding: 2rem"] {
+      padding: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari list fixes for flex items */
+    .section li[style*="display: flex; align-items: center; padding: 0.5rem 0"] {
+      display: block !important;
+      padding: 0.75rem 0 !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari flex container fixes for process steps */
+    .section div[style*="display: flex; align-items: start; gap: 1rem"] {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 1rem !important;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
