@@ -687,6 +687,97 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
 }
 
+/* Recruiting Page Specific Fixes */
+
+/* Mobile fixes for recruiting page layouts */
+@media (max-width: 768px) {
+  /* Fix recruiting specializations grid */
+  .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center"] {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+  }
+  
+  /* Fix recruiting stats grid inside gradient box */
+  .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Fix facilities section two-column layout */
+  .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl)"] {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 2rem !important;
+  }
+  
+  /* Fix professionals section cards grid */
+  .section div[style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Recruiting-specific spacing fixes (avoid conflicts) */
+  .section div[style*="max-width: 800px; margin: 0 auto; text-align: center"] {
+    padding: 0 1rem !important;
+    margin: 0 auto !important;
+  }
+  
+  .section h3[style*="font-size: 1.75rem"] {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+}
+
+/* Safari-specific recruiting page fixes */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    /* Safari recruiting grid overrides */
+    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; margin-bottom: 4rem"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 0 !important;
+      align-items: stretch !important;
+      margin-bottom: 2rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari stats grid fixes */
+    .section div[style*="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)"] div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari facilities section fixes */
+    .section div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl)"] {
+      display: block !important;
+      grid-template-columns: none !important;
+      gap: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari professionals grid fixes */
+    .section div[style*="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem"] {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    
+    /* Safari content centering */
+    .section div[style*="text-align: center"] h3 {
+      text-align: center !important;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
+}
+
 /* Enhanced Responsive Design */
 /* Safari-specific fixes */
 @supports (-webkit-touch-callout: none) {
